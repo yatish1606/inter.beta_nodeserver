@@ -34,6 +34,7 @@ module.exports = {
     },
     updateInterview: async (data, callBack) => {
         const pool = await connectAndQuery()
+        console.log(data)
         const request = new sql.Request(pool)
         request.query(
             "UPDATE interviews SET status = '" +
@@ -42,6 +43,25 @@ module.exports = {
                 data.jsonTemplate +
                 "' WHERE id = '" +
                 data.id +
+                "'",
+            (error, result) => {
+                console.log(result, error)
+                if (result) {
+                    if (result.rowsAffected != null) {
+                        callBack(null, data)
+                    }
+                }
+            }
+        )
+    },
+    updateJson: async (data, callBack) => {
+        const pool = await connectAndQuery()
+        const request = new sql.Request(pool)
+        request.query(
+            "UPDATE interviews SET status = 'COMPLETED', jsonTemplate = '" +
+                data.jsonTemplate +
+                "' WHERE id = '" +
+                data.room_id +
                 "'",
             (error, result) => {
                 console.log(result, error)

@@ -4,6 +4,7 @@ const {
     getInterviewsByInterviewerId,
     updateInterview,
     getInterviewsById,
+    updateJson,
 } = require('./interviews.service')
 // const { hashSync, genSaltSync, compareSync } = require('bcrypt')
 // const { sign } = require('jsonwebtoken')
@@ -139,6 +140,23 @@ module.exports = {
                 })
             }
             return res.status(201).json({
+                success: 1,
+                data: results,
+            })
+        })
+    },
+    updateJSON: (req, res) => {
+        console.log('updating json', req.body)
+        const body = req.body
+        updateJson(body, (err, results) => {
+            if (err) {
+                console.log(err)
+                return res.status(500).json({
+                    success: 0,
+                    message: 'Database connection errror',
+                })
+            }
+            return res.status(200).json({
                 success: 1,
                 data: results,
             })
