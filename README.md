@@ -1,6 +1,6 @@
 # inter.beta
 
-inter.beta is an application that is dedicated to automating interview feedbacks with an aim towards making the tech interview processess at companies less of a hassle. Created for the Semicolons 2023 Hackathon. The code for the machine learning models can be found [here](https://github.com/yatish1606/semicolons23_feed.back_nodeserver) and the code for the webapp can be found [here](https://github.com/yatish1606/inter.beta).
+inter.beta is an application that is dedicated to automating interview feedbacks with an aim towards making the tech interview processess at companies less of a hassle. Created for the Semicolons 2023 Hackathon. The code for the machine learning models can be found [here](https://github.com/yatish1606/semicolons23_feed.inter.beta_ml) and the code for the webapp can be found [here](https://github.com/yatish1606/inter.beta).
 
 ## Team
 
